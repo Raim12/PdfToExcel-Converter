@@ -144,12 +144,20 @@ def pdf_to_excel_pair_header_with_body(
 
 
 # ---------- Streamlit UI ----------
-st.set_page_config(page_title="PDF → Excel Converter", page_icon="📊", layout="centered")
+st.set_page_config(
+    page_title="PDF to Excel Converter",
+    page_icon="pdf.png",
+    layout="centered"
+)
 
-st.title("📄➡️📊 PDF Table Extractor")
-st.write("Upload a PDF and convert detected header+body tables into an Excel file.")
+st.title("📑 PDF to Excel Converter")
+st.write(
+    "Easily extract structured tables from your PDF documents "
+    "and export them into clean, well-formatted Excel files. "
+    "Simply upload your PDF and download the converted result in seconds."
+)
 
-uploaded_pdf = st.file_uploader("Upload PDF", type=["pdf"])
+uploaded_pdf = st.file_uploader("📂 Upload your PDF file", type=["pdf"])
 
 if uploaded_pdf is not None:
     with open("temp.pdf", "wb") as f:
